@@ -7,7 +7,7 @@
 #include <optional>
 #include <string>
 #include <iostream>
-#include <windows.h> // Para o tipo DWORD
+#include <windows.h>
 using namespace std;
 using json = nlohmann::json;
 #include <cpr/cpr.h>
@@ -165,10 +165,7 @@ std::string findValueByName(const json& j, const std::string& category, const st
 }
 
 void parseAndAssignConstants(const std::string& jsonString) {
-    // Parse do JSON
     json j = json::parse(jsonString);
-
-    // Atribuição das constantes para cada estrutura de offsets
     Offset::General.dwEntityList = findValueByName(j, "GeneralOffsets", "dwEntityList");
     Offset::General.dwGlobalVars = findValueByName(j, "GeneralOffsets", "dwGlobalVars");
     Offset::General.dwLocalPlayerController = findValueByName(j, "GeneralOffsets", "dwLocalPlayerController");
@@ -277,24 +274,9 @@ void parseAndAssignConstants(const std::string& jsonString) {
 
 int main() {
     try {
-        // URL do arquivo JSON
-        std::string url = "https://raw.githubusercontent.com/E0x00000/CS2-Basic-Dump/main/final_dump.json";  // Substitua pela URL correta
-
-        // Faz o download do arquivo JSON
+        std::string url = "https://raw.githubusercontent.com/E0x00000/CS2-Basic-Dump/main/final_dump.json";
         cpr::Response r = cpr::Get(cpr::Url{ url });
-
-        // Verificação de status_code e informações de depuração
-        if (r.status_code == 0) {
-            throw std::runtime_error("Erro ao baixar o arquivo JSON: Conexão falhou ou URL inválida.");
-        }
-        else if (r.status_code != 200) {
-            throw std::runtime_error("Erro ao baixar o arquivo JSON: HTTP status " + std::to_string(r.status_code));
-        }
-
-        // Parse do JSON e atribuição de constantes
         parseAndAssignConstants(r.text);
-
-        // Impressão dos valores dos offsets (exemplo para alguns)
         std::cout << "dwEntityList: " << Offset::General.dwEntityList << std::endl;
         std::cout << "m_iszPlayerName: " << Offset::Entity.m_iszPlayerName << std::endl;
         std::cout << "m_modelState: " << Offset::Pawn.m_modelState << std::endl;
