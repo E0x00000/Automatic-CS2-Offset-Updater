@@ -17,152 +17,154 @@ namespace Offset {
 
     struct GeneralOffsets
     {
-        string dwEntityList;
-        string dwGlobalVars;
-        string dwLocalPlayerController;
-        string dwLocalPlayerPawn;
-        string LocalPlayerPawn;
-        string dwPlantedC4;
-        string dwViewAngles;
-        string PlantedC4;
-        string InputSystem;
-        string Sensitivity;
-        string jump;
-        string dwWindowHeight;
-        string dwWindowWidth;
+       DWORD dwEntityList;
+       DWORD dwGlobalVars;
+       DWORD dwLocalPlayerController;
+       DWORD dwLocalPlayerPawn;
+       DWORD LocalPlayerPawn;
+       DWORD dwPlantedC4;
+       DWORD dwViewAngles;
+       DWORD PlantedC4;
+       DWORD InputSystem;
+       DWORD Sensitivity;
+       DWORD dwViewMatrix;
+       DWORD dwWindowHeight;
+       DWORD dwWindowWidth;
     } General;
 
     struct EntityOffsets {
-        string m_bPawnIsAlive;
-        string m_hPlayerPawn;
-        string m_iszPlayerName;
-        string m_flGravityScale;
+        DWORD m_bPawnIsAlive;
+        DWORD m_hPlayerPawn;
+        DWORD m_iszPlayerName;
+        DWORD m_flGravityScale;
     } Entity;
 
     struct PawnOffsets {
-        string m_pMovementServices;//
-        string m_pWeaponServices;//
-        string m_pBulletServices;//
-        string m_pCameraServices;//
-        string m_pViewModelServices;//
-        string m_pClippingWeapon;//
-        string m_hViewModel;
-        string m_nCrouchState;
-        string m_bIsScoped;
-        string m_bIsDefusing;
-        string m_totalHitsOnServer;
-        string m_vOldOrigin;
-        string m_ArmorValue;
-        string m_iMaxHealth;
-        string m_iHealth;
-        string m_pGameSceneNode;
-        string m_modelState;
-        string m_vecOrigin;
-        string m_hOwnerEntity;
-        string m_angEyeAngles;
-        string m_vecLastClipCameraPos;
-        string m_iShotsFired;
-        string m_flFlashMaxAlpha;
-        string m_flFlashDuration;
-        string m_aimPunchAngle;
-        string m_aimPunchCache;
-        string m_iIDEntIndex;
-        string m_iTeamNum;
-        string m_iDesiredFOV;
-        string m_iFOVStart;
-        string m_entitySpottedState;
-        string m_bSpottedByMask;
-        string m_vecAbsVelocity;
-        string m_bIsBuyMenuOpen;
+        DWORD m_pMovementServices;//
+        DWORD m_pWeaponServices;//
+        DWORD m_pBulletServices;//
+        DWORD m_pCameraServices;//
+        DWORD m_pViewModelServices;//
+        DWORD m_pClippingWeapon;//
+        DWORD m_hViewModel;
+        DWORD m_nCrouchState;
+        DWORD m_bIsScoped;
+        DWORD m_bIsDefusing;
+        DWORD m_totalHitsOnServer;
+        DWORD m_vOldOrigin;
+        DWORD m_ArmorValue;
+        DWORD m_iMaxHealth;
+        DWORD m_iHealth;
+        DWORD m_pGameSceneNode;
+        DWORD m_modelState;
+        DWORD m_vecOrigin;
+        DWORD m_hOwnerEntity;
+        DWORD m_angEyeAngles;
+        DWORD m_vecLastClipCameraPos;
+        DWORD m_iShotsFired;
+        DWORD m_flFlashMaxAlpha;
+        DWORD m_flFlashDuration;
+        DWORD m_aimPunchAngle;
+        DWORD m_aimPunchCache;
+        DWORD m_iIDEntIndex;
+        DWORD m_iTeamNum;
+        DWORD m_iDesiredFOV;
+        DWORD m_iFOVStart;
+        DWORD m_entitySpottedState;
+        DWORD m_bSpottedByMask;
+        DWORD m_vecAbsVelocity;
+        DWORD m_bIsBuyMenuOpen;
     } Pawn;
 
     struct GlobalVarOffsets {
-        string RealTime;
-        string FrameCount;
-        string MaxClients;
-        string IntervalPerTick;
-        string CurrentTime;
-        string CurrentTime2;
-        string TickCount;
-        string IntervalPerTick2;
-        string CurrentNetchan;
-        string CurrentMap;
-        string CurrentMapName;
+        DWORD RealTime;
+        DWORD FrameCount;
+        DWORD MaxClients;
+        DWORD IntervalPerTick;
+        DWORD CurrentTime;
+        DWORD CurrentTime2;
+        DWORD TickCount;
+        DWORD IntervalPerTick2;
+        DWORD CurrentNetchan;
+        DWORD CurrentMap;
+        DWORD CurrentMapName;
     } GlobalVar;
 
     struct PlayerControllerOffsets {
-        string m_hPawn;
-        string m_pObserverServices;
-        string m_hObserverTarget;
-        string m_hController;
-        string m_iPawnArmor;
-        string m_bPawnHasDefuser;
-        string m_bPawnHasHelmet;
+        DWORD m_hPawn;
+        DWORD m_pObserverServices;
+        DWORD m_hObserverTarget;
+        DWORD m_hController;
+        DWORD m_iPawnArmor;
+        DWORD m_bPawnHasDefuser;
+        DWORD m_bPawnHasHelmet;
     } PlayerController;
 
     struct EconEntityOffsets {
-        string m_AttributeManager;
-        string m_nFallbackPaintKit;
-        string m_nFallbackSeed;
-        string m_flFallbackWear;
-        string m_nFallbackStatTrak;
-        string m_szCustomName;
-        string m_iEntityQuality;
-        string m_iItemIDHigh;
+        DWORD m_AttributeManager;
+        DWORD m_nFallbackPaintKit;
+        DWORD m_nFallbackSeed;
+        DWORD m_flFallbackWear;
+        DWORD m_nFallbackStatTrak;
+        DWORD m_szCustomName;
+        DWORD m_iEntityQuality;
+        DWORD m_iItemIDHigh;
     } EconEntity;
 
     struct WeaponBaseOffsets {
-        string WeaponDataPTR;
-        string szName;
-        string Clip1;
-        string m_iMaxClip1;
-        string m_flCycleTime;
-        string m_flPenetration;
-        string m_WeaponType;
-        string m_flInaccuracyMove;
-        string m_bInReload;
-        string WeaponSize;
-        string m_hActiveWeapon;
-        string m_Item;
-        string m_iItemDefinitionIndex;
-        string m_MeshGroupMask;
+        DWORD WeaponDataPTR;
+        DWORD szName;
+        DWORD Clip1;
+        DWORD m_iMaxClip1;
+        DWORD m_flCycleTime;
+        DWORD m_flPenetration;
+        DWORD m_WeaponType;
+        DWORD m_flInaccuracyMove;
+        DWORD m_bInReload;
+        DWORD WeaponSize;
+        DWORD m_hActiveWeapon;
+        DWORD m_Item;
+        DWORD m_iItemDefinitionIndex;
+        DWORD m_MeshGroupMask;
     } WeaponBase;
 
     struct C4Offsets {
-        string m_bBeingDefused;
-        string m_flDefuseCountDown;
-        string m_nBombSite;
+        DWORD m_bBeingDefused;
+        DWORD m_flDefuseCountDown;
+        DWORD m_nBombSite;
     } C4;
 
     struct InGameMoneyServicesOffsets {
-        string m_pInGameMoneyServices;
-        string m_iAccount;
-        string m_iTotalCashSpent;
-        string m_iCashSpentThisRound;
+        DWORD m_pInGameMoneyServices;
+        DWORD m_iAccount;
+        DWORD m_iTotalCashSpent;
+        DWORD m_iCashSpentThisRound;
     } InGameMoneyServices;
 
     struct SmokeGrenadeProjectileOffsets {
-        string m_nSmokeEffectTickBegin;
-        string m_bDidSmokeEffect;
-        string m_nRandomSeed;
-        string m_vSmokeColor;
-        string m_vSmokeDetonationPos;
-        string m_VoxelFrameData;
-        string m_bSmokeVolumeDataReceived;
-        string m_bSmokeEffectSpawned;
+        DWORD m_nSmokeEffectTickBegin;
+        DWORD m_bDidSmokeEffect;
+        DWORD m_nRandomSeed;
+        DWORD m_vSmokeColor;
+        DWORD m_vSmokeDetonationPos;
+        DWORD m_VoxelFrameData;
+        DWORD m_bSmokeVolumeDataReceived;
+        DWORD m_bSmokeEffectSpawned;
     } SmokeGrenadeProjectile;
 }
+using DWORD = unsigned long;
 
-std::string findValueByName(const json& j, const std::string& category, const std::string& name) {
+DWORD findValueByName(const nlohmann::json& j, const std::string& category, const std::string& name) {
     if (j.contains(category) && j[category].contains("constants")) {
         for (const auto& constant : j[category]["constants"]) {
             if (constant["name"] == name) {
-                return constant["value"];
+                return std::stoul(constant["value"].get<std::string>(), nullptr, 0);
             }
         }
     }
     throw std::runtime_error("Constante " + name + " não encontrada em " + category);
 }
+
 
 void parseAndAssignConstants(const std::string& jsonString) {
     json j = json::parse(jsonString);
@@ -265,6 +267,7 @@ void parseAndAssignConstants(const std::string& jsonString) {
     Offset::General.dwViewAngles = findValueByName(j, "GeneralOffsets", "dwViewAngles");
     Offset::General.dwWindowHeight = findValueByName(j, "GeneralOffsets", "dwWindowHeight");
     Offset::General.dwWindowWidth = findValueByName(j, "GeneralOffsets", "dwWindowWidth");
+    Offset::General.dwViewMatrix = findValueByName(j, "GeneralOffsets", "dwViewMatrix");
 }
 
 
@@ -274,10 +277,11 @@ void parseAndAssignConstants(const std::string& jsonString) {
 
 int main() {
     try {
-        std::string url = "https://raw.githubusercontent.com/E0x00000/CS2-Basic-Dump/main/final_dump.json";
+        std::string url = "https://raw.githubusercontent.com/E0x00000/CS2-Basic-Dump/main/final%20dump.json";
         cpr::Response r = cpr::Get(cpr::Url{ url });
         parseAndAssignConstants(r.text);
         std::cout << "dwEntityList: " << Offset::General.dwEntityList << std::endl;
+        std::cout << "dwEntityList: " << Offset::General.dwViewMatrix << std::endl;
         std::cout << "m_iszPlayerName: " << Offset::Entity.m_iszPlayerName << std::endl;
         std::cout << "m_modelState: " << Offset::Pawn.m_modelState << std::endl;
         std::cout << "m_hPawn: " << Offset::PlayerController.m_hPawn << std::endl;
